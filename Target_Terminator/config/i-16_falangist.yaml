@@ -1,0 +1,43 @@
+####################################################
+##         I-16 Falangist plane yaml file         ##
+####################################################
+# NOTE: See validation_templates/plane_template.py # 
+#       for the parameter restrictions             #
+####################################################
+
+sprite:
+    side_view_dir : "assets/republican_i16_polikarpov.png"
+    size : [36, 18] # in pixels
+properties:
+    # scalars
+    mass : 1200
+    drag_constant : 0.6
+    lift_constant : 100 
+    lift_coefficient_aoa_0 : 0.32 # aoa = angle of attack
+    drag_coefficient_aoa_0 : 0.5
+    engine_force : 300
+    agility : 100
+    initial_throttle : 100 # as percentage
+    initial_pitch : 0 # in degrees
+    collision_radius : 6 # in pixels
+
+    # vectors
+    critical_aoa_lower_bound : [-15.0, -0.95] # aoa = angle of attack
+    critical_aoa_higher_bound : [19.0, 1.4]
+    initial_velocity : [100.0, 0.0] # velocity vector
+    initial_position : [100, 300] # coordinate of top left most pixel
+    
+    # other
+    max_spawn_position_deviation : 20 # in pixels from initial_position
+    max_spawn_pitch_deviation : 20 # in degrees from initial_pitch
+
+bullet_config:
+    sprite : "assets/bullet.png"
+    speed : 100 # in m/s, will be multiplied by the plane speed
+    lifetime : 180 # number of ticks the bullet may travel before death
+    size : [10, 10]
+    coll_radius : 0 # in pixels around position used for collision
+    # we recommend keeping coll_radius at 0, as bullets are very small,
+    # smaller than can be displayed in the simulation
+    # the size of the sprite has no effect on the size of the actual 
+    # bullets
